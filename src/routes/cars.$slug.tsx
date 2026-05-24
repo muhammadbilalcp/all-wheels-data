@@ -87,6 +87,15 @@ function CarDetailPage() {
         </header>
       </div>
 
+      <div className="mx-auto max-w-7xl px-6">
+        <img
+          src={getCarImage(car, 1400, 600)}
+          alt={`${car.year} ${car.make} ${car.model}`}
+          className="w-full h-[400px] object-cover border border-ink"
+          loading="eager"
+        />
+      </div>
+
       <div className="mx-auto max-w-7xl px-6 py-12 grid md:grid-cols-12 gap-10">
         {/* Description column */}
         <section className="md:col-span-7">
