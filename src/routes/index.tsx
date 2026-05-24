@@ -144,12 +144,20 @@ function CarRow({ car, index }: { car: Car; index: number }) {
       <Link
         to="/cars/$slug"
         params={{ slug: car.slug }}
-        className="group grid grid-cols-12 gap-4 py-5 items-baseline hover:bg-cream/60 -mx-3 px-3 transition-colors"
+        className="group grid grid-cols-12 gap-4 py-5 items-center hover:bg-cream/60 -mx-3 px-3 transition-colors"
       >
+        <div className="hidden sm:block col-span-1">
+          <img
+            src={getCarImage(car, 120, 90)}
+            alt={`${car.year} ${car.make} ${car.model}`}
+            className="w-full h-12 object-cover border border-ink"
+            loading="lazy"
+          />
+        </div>
         <span className="col-span-1 font-serif text-muted-foreground tabular-nums">
           {String(index).padStart(3, "0")}
         </span>
-        <div className="col-span-12 sm:col-span-5">
+        <div className="col-span-12 sm:col-span-4">
           <p className="eyebrow text-rust">{car.make}</p>
           <p className="font-serif text-2xl leading-tight group-hover:italic">{car.model}</p>
         </div>
