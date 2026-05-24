@@ -97,7 +97,7 @@ function CarDetailPage() {
           <div className="mt-12">
             <h2 className="eyebrow text-muted-foreground">Of Note</h2>
             <ul className="mt-3 space-y-3">
-              {car.notable.map((n, i) => (
+              {car.notable.map((n: string, i: number) => (
                 <li key={i} className="flex gap-4 border-b border-border pb-3">
                   <span className="font-serif text-muted-foreground tabular-nums">{String(i + 1).padStart(2, "0")}</span>
                   <span>{n}</span>
