@@ -382,3 +382,8 @@ export const eras = ["Vintage", "Classic", "Modern"];
 export function getCarBySlug(slug: string) {
   return cars.find((c) => c.slug === slug);
 }
+
+export function getCarImage(car: Car, width = 1200, height = 800): string {
+  const prompt = encodeURIComponent(`${car.year} ${car.make} ${car.model} automotive photography professional studio lighting`);
+  return `https://image.pollinations.ai/prompt/${prompt}?width=${width}&height=${height}&nologo=true&seed=${car.slug}`;
+}

@@ -1,5 +1,5 @@
 import { createFileRoute, Link, notFound } from "@tanstack/react-router";
-import { cars, getCarBySlug } from "@/data/cars";
+import { cars, getCarBySlug, getCarImage } from "@/data/cars";
 
 export const Route = createFileRoute("/cars/$slug")({
   loader: ({ params }) => {
